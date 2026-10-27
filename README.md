@@ -13,7 +13,7 @@ Stag beetles called *shellbacks* crawl out of the woods. Fight them, collect the
 python3 -m http.server 8765
 ```
 
-Then open http://localhost:8765/village.html. There's no build step. three.js `0.160.0` loads from jsdelivr, so you need internet.
+Then open http://localhost:8765/. There's no build step. three.js `0.160.0` loads from jsdelivr, so you need internet.
 
 | Input | Action |
 |---|---|
@@ -30,7 +30,7 @@ You have 5 hearts. If you hit 0, the lamps carry you home to the square.
 The code is plain ES modules with no bundler. Each module builds its part of the world when it's imported, so the import order in `main.js` is also the order the world gets built in.
 
 ```
-village.html        page shell: HUD markup and styles, the import map, loads src/main.js
+index.html          page shell: HUD markup and styles, the import map, loads src/main.js
 src/
   main.js           the frame loop
   stage.js          renderer, scene, fog, follow camera, sun shadows, the low-res + dither pass (vignette, hurt flash, fade)
