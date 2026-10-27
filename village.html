@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberhollow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  canvas { display: block; image-rendering: pixelated; }
+  .ui { position: fixed; font: 14px/1.5 Silkscreen, ui-monospace, Menlo, monospace; color: #f4e3c1; text-shadow: 2px 2px 0 #1a120c; pointer-events: none; }
+  #hud { top: 14px; left: 16px; font-size: 20px; }
+  #hearts { color: #e0533c; letter-spacing: 3px; }
+  #embers { color: #ffb347; font-size: 16px; }
+  #place { top: 14px; right: 16px; opacity: .75; text-align: right; }
+  #hint { bottom: 14px; left: 16px; font-size: 11px; opacity: .8; transition: opacity 3s; }
+  #prompt { transform: translate(-50%, -100%); font-size: 11px; background: #1b1410d8; border: 2px solid #c9a36b; padding: 1px 6px; display: none; white-space: nowrap; }
+  #talk { left: 50%; bottom: 22px; transform: translateX(-50%); width: min(660px, calc(100% - 32px)); box-sizing: border-box;
+    background: #1b1410ec; border: 3px solid #c9a36b; box-shadow: 0 0 0 3px #1b1410; padding: 12px 18px 20px; display: none; min-height: 92px; }
+  #talk b { display: block; color: #ffb347; font-weight: normal; margin-bottom: 4px; }
+  #talk i { position: absolute; right: 12px; bottom: 4px; font-style: normal; animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  #title { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: opacity 2.5s; }
+  #title h1 { font: 46px Silkscreen, monospace; letter-spacing: 8px; margin: 0; color: #ffd08a; }
+  #title p { margin: 10px 0 0; opacity: .85; }
+  #banner { top: 16%; left: 50%; transform: translateX(-50%); font-size: 26px; color: #ffd08a; opacity: 0; transition: opacity 1.5s; text-align: center; white-space: nowrap; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="hud" class="ui"><div id="hearts"></div><div id="embers"></div></div>
+<div id="place" class="ui">Emberhollow<br><span style="font-size:11px">dusk</span></div>
+<div id="hint" class="ui">WASD / arrows move · J / space / click attack · K / shift roll · E talk · wheel zoom</div>
+<div id="prompt" class="ui"></div>
+<div id="talk" class="ui"><b></b><span></span><i>▼</i></div>
+<div id="banner" class="ui"></div>
+<div id="title" class="ui"><h1>EMBERHOLLOW</h1><p>where the bell has not rung in seven years</p></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
